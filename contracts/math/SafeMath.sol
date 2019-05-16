@@ -62,4 +62,18 @@ library SafeMath {
         require(b != 0, "SafeMath: modulo by zero");
         return a % b;
     }
+    
+    /**
+     * @dev Converts TRX to sun.
+     */
+    function toSun(uint256 a) internal pure returns (uint256) {
+        return mul(a, 1000000);
+    }
+
+    /**
+     * @dev Converts sun to TRX.
+     */
+    function toTRX(uint256 a) internal pure returns (uint256) {
+        return div(a, 1000000);
+    }
 }
